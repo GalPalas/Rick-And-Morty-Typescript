@@ -1,0 +1,13 @@
+.container .profile {
+  width: 15rem;
+  margin-top: -140px;
+  border: 2px solid #fff;
+}
+
+.container .row .episodes {
+  max-width: 4.5rem;
+}
+
+.container .row .episode a {
+  color: #fff;
+}
