@@ -1,14 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-
-interface Character {
-  id: number;
-  name: string;
-  image: string;
-  gender: string;
-  species: string;
-  status: string;
-}
+import { Character } from "interfaces/Character";
 
 export const useFetchCharacters = () => {
   const [status, setStatus] = useState<string>("idle");

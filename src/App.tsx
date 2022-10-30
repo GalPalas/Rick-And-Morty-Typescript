@@ -1,13 +1,17 @@
+import { Routes, Route } from "react-router-dom";
+import Character from "components/Character";
+import Characters from "components/Characters";
 import Navbar from "components/Navbar";
-import useFetchCharacters from "hooks/useFetchCharacters";
 
 const App = () => {
-  const characters = useFetchCharacters();
-  console.log(characters);
   return (
-    <div className="App">
+    <>
       <Navbar />
-    </div>
+      <Routes>
+        <Route path="/character/:id" element={<Character />}></Route>
+        <Route path="/" element={<Characters />}></Route>
+      </Routes>
+    </>
   );
 };
 
