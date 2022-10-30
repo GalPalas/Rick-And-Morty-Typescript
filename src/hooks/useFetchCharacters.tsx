@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Character } from "interfaces/Character";
+import { Status } from "enums/Status";
 
 export const useFetchCharacters = () => {
   const [status, setStatus] = useState<string>("idle");
@@ -8,16 +9,16 @@ export const useFetchCharacters = () => {
 
   useEffect(() => {
     const fetchCharacters = async () => {
-      setStatus("loading");
+      setStatus(Status.Loading);
       try {
         const { data } = await axios.get(
           "https://rickandmortyapi.com/api/character"
         );
 
-        setStatus("success");
+        setStatus(Status.Success);
         setCharacters(data.results);
       } catch (e) {
-        setStatus("error");
+        setStatus(Status.Error);
       }
     };
     fetchCharacters();
